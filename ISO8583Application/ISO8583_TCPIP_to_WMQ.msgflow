@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ComIbmMQOutput.msgnode="ComIbmMQOutput.msgnode" xmlns:ComIbmTCPIPServerInput.msgnode="ComIbmTCPIPServerInput.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="ISO8583_TCPIP_to_WMQ.msgflow" nsPrefix="ISO8583_TCPIP_to_WMQ.msgflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <translation xmi:type="utility:TranslatableString" key="ISO8583_TCPIP_to_WMQ" bundleName="ISO8583_TCPIP_to_WMQ" pluginId="ISO8583Application"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/ISO8583Application/icons/full/obj16/ISO8583_TCPIP_to_WMQ.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/ISO8583Application/icons/full/obj30/ISO8583_TCPIP_to_WMQ.gif"/>
+    <composition>
+      <nodes xmi:type="ComIbmTCPIPServerInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="52,46" connectionDetails="1111" messageDomainProperty="DFDL" messageTypeProperty="{}:ISO8583_1987" messageCodedCharSetIdProperty="1208" messageEncodingProperty="546">
+        <translation xmi:type="utility:ConstantString" string="TCPIP port 1111"/>
+      </nodes>
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="180,47" computeExpression="esql://routine/#ISO8583_TCPIP_to_WMQ_Transform_ISO8583_to_XML.Main">
+        <translation xmi:type="utility:ConstantString" string="Transform ISO8583 to XML"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="390,48" queueName="OUTQ">
+        <translation xmi:type="utility:ConstantString" string="ISO8583.OUT"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer/>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>

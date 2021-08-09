@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.etools.mft.unittest.core.models.client="http:///com/ibm/etools/mft/unittest/core/models/client.ecore" xmlns:com.ibm.wbit.comptest.common.models.event="http:///com/ibm/etools/mft/unittest/common/models/event.ecore" xmlns:jms="http:///com/ibm//etools/mft/unittest/common/model2/jms" xmlns:model2="http:///com/ibm//etools/mft/unittest/common/model2" xmlns:mq="http:///com/ibm//etools/mft/unittest/common/model2/mq">
+  <com.ibm.etools.mft.unittest.core.models.client:EclipseClient iD="1341434032140-20" eventTrace="/1" clientID="1341434032140-20">
+    <scopes xsi:type="model2:FlowTestScope" name="Configuration" iD="default">
+      <testModules xsi:type="model2:TestMsgFlow" name="/ISO8583Application/ISO8583_WMQ_to_TCPIP.msgflow" iD="1341434032140-24"/>
+      <testModules xsi:type="model2:TestMsgFlow" name="/ISO8583Application/ISO8583_TCPIP_to_WMQ.msgflow" iD="1341434032148-25"/>
+      <testModules xsi:type="model2:TestAppOrLib" name="ISO8583Application" iD="1341434032151-26"/>
+      <settings xsi:type="model2:FlowSettings"/>
+      <settings xsi:type="model2:DeploymentSettings"/>
+      <settings xsi:type="mq:MQSettings"/>
+      <settings xsi:type="jms:JMSSettings"/>
+      <settings xsi:type="mq:MQMessageHeaders"/>
+      <settings xsi:type="jms:JMSMessageHeaders"/>
+      <messageHeaders xsi:type="mq:MQHeader" iD="1341434032140-23" headerName="Default Header"/>
+      <messageHeaders xsi:type="jms:JMSHeader" headerName="Default Header"/>
+    </scopes>
+  </com.ibm.etools.mft.unittest.core.models.client:EclipseClient>
+  <com.ibm.wbit.comptest.common.models.event:ExecutionEventTrace iD="1341434032140-21" children="/2"/>
+  <mq:InteractiveMQEnqueueEvent iD="1341490329166-166" timestamp="1341490329166" host="localhost" port="2414" queueManager="IB9QMGR" queue="ISO8583.IN">
+    <properties name="SERVER_CHANNEL" stringValue="SYSTEM.BKR.CONFIG"/>
+    <request xsi:type="model2:TestMessage" iD="1341434037318-31" header="/0/@scopes.0/@messageHeaders.0">
+      <properties name="messageSource" stringValue="linkedFile"/>
+      <properties name="plainText"/>
+      <properties name="SHOW_HEX_VIEW" stringValue="false"/>
+      <properties name="linkedFile" stringValue="Workspace%3A%2FISO8583Application%2FTest_XML_to_ISO8583.txt"/>
+    </request>
+  </mq:InteractiveMQEnqueueEvent>
+</xmi:XMI>
